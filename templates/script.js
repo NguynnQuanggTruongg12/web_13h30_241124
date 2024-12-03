@@ -94,6 +94,66 @@ function toggleEnable() {
     button.innerText = enabled ? 'ON' : 'OFF';
     sendCommand(enabled ? 'ENABLE' : 'DISABLE');
 }
+document.getElementById("up_cam").addEventListener("click", function() {
+    // Gửi lệnh di chuyển camera lên
+    sendCommand("camera_up");
+});
+
+document.getElementById("down_cam").addEventListener("click", function() {
+    // Gửi lệnh di chuyển camera xuống
+    sendCommand("camera_down");
+});
+
+document.getElementById("left_cam").addEventListener("click", function() {
+    // Gửi lệnh di chuyển camera sang trái
+    sendCommand("camera_left");
+});
+
+document.getElementById("right_cam").addEventListener("click", function() {
+    // Gửi lệnh di chuyển camera sang phải
+    sendCommand("camera_right");
+});
+
+document.getElementById("home_cam").addEventListener("click", function() {
+    // Gửi lệnh đưa camera về vị trí "home"
+    sendCommand("camera_home");
+});
+// Hàm hiển thị phần điều khiển robot
+// Hàm để hiển thị phần điều khiển và gửi lệnh "CONTROL"
+// function showControl() {
+//     // Hiển thị phần điều khiển và ẩn phần camera
+//     document.querySelector('.control-panel').style.display = 'block';
+//     document.querySelector('.camera-panel').style.display = 'none';
+    
+//     // Gửi lệnh "CONTROL"
+//     sendCommand("CONTROL");
+// }
+
+// // Hàm để hiển thị phần camera và gửi lệnh "CAMERA"
+// function showCamera() {
+//     // Ẩn phần điều khiển và hiển thị phần camera
+//     document.querySelector('.control-panel').style.display = 'none';
+//     document.querySelector('.camera-panel').style.display = 'block';
+    
+//     // Gửi lệnh "CAMERA"
+//     sendCommand("CAMERA");
+// }
+document.getElementById("controlButton").addEventListener("click", function() {
+    // Gửi lệnh đưa camera về vị trí "home"
+    sendCommand("Control");
+});
+document.getElementById("controlCamera").addEventListener("click", function() {
+    // Gửi lệnh đưa camera về vị trí "home"
+    sendCommand("Camera");
+});
+document.getElementById("controlRobot").addEventListener("click", function() {
+    // Gửi lệnh đưa camera về vị trí "home"
+    sendCommand("Robot");
+});
+
+
+
+
 
 // Gắn sự kiện cho các nút điều khiển
 document.querySelectorAll('.control-button').forEach(button => {
